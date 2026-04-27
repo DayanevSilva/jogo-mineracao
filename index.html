@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show do Milhão - Fases da Mineração</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="lights"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="badge">
+        <strong>Grupos:</strong> 5<br>
+        <strong>Questões:</strong> 5 por grupo
+      </div>
+
+      <div class="logo">
+        <h1>SHOW DO MILHÃO</h1>
+        <p>Fases da Mineração • Prospecção e Pesquisa Mineral</p>
+      </div>
+
+      <div class="badge">
+        <strong>Tempo:</strong> <span id="tempoInfo">20</span>s<br>
+        <strong>Desempate:</strong> questão dourada
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h3 class="section-title">Placar</h3>
+        <div id="scoreboard"></div>
+
+        <div class="presenter">
+          <h3 class="section-title">Modo apresentador</h3>
+          <p id="presenterText">Clique em “Iniciar jogo” para começar.</p>
+        </div>
+
+        <div class="voice-box">
+          <h3 class="section-title">Narração</h3>
+          <div class="voice-controls">
+            <button class="btn-success" id="btnLerPergunta">🔊 Ler pergunta</button>
+            <button class="btn-alt" id="btnToggleVoice">🎙️ Voz ligada</button>
+          </div>
+          <p class="small-note">
+            A leitura usa a voz do navegador/dispositivo.
+          </p>
+        </div>
+
+        <div class="controls">
+          <button class="btn-main" id="btnIniciar">▶️ Iniciar jogo</button>
+          <button class="btn-alt" id="btnProxima">⏭️ Próxima</button>
+          <button class="btn-danger" id="btnReiniciar">🔄 Reiniciar</button>
+        </div>
+      </aside>
+
+      <section class="stage">
+        <div id="gameScreen">
+          <div class="status-row">
+            <div class="current-team" id="currentTeam">Grupo da vez: Grupo 1</div>
+            <div class="timer-wrap">⏱️ <span class="timer" id="timer">20</span></div>
+            <div class="question-count" id="questionCount">Pergunta 1 de 25</div>
+          </div>
+
+          <div class="help-panel">
+            <div class="help-card">
+              <div class="help-title">Cartões do grupo atual</div>
+              <div id="helpStatus"></div>
+              <div class="help-buttons">
+                <button class="btn-help" id="btnPular">⏭️ Pular</button>
+                <button class="btn-help" id="btnUniversitarios">🎓 Universitários</button>
+                <button class="btn-help" id="btnEliminar">✂️ Eliminar 2</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="goldenBuzzBox" class="golden-buzz hidden">
+            <h3>⭐ Questão dourada</h3>
+            <p id="goldenBuzzText">As equipes empatadas podem responder juntas. Quem clicar primeiro ganha a vez.</p>
+            <div id="goldenBuzzButtons" class="golden-buzz-buttons"></div>
+          </div>
+
+          <div class="question-box">
+            <h2 id="questionText">Clique em “Iniciar jogo” para começar.</h2>
+          </div>
+
+          <div class="answers" id="answers"></div>
+
+          <div class="message" id="message"></div>
+          <div class="signal-box" id="signalBox"></div>
+
+          <div class="hint-box hidden" id="hintBox">
+            <strong id="hintTitle">Ajuda:</strong>
+            <span id="hintText"></span>
+          </div>
+        </div>
+
+        <div class="final-screen" id="finalScreen">
+          <h2>🏆 Ranking Final</h2>
+          <div class="winner" id="winnerText"></div>
+          <div class="ranking" id="rankingList"></div>
+
+          <div class="golden hidden" id="goldenSection">
+            <h3>⭐ Questão dourada</h3>
+            <p id="goldenInfo">
+              Houve empate. As equipes empatadas disputam ao mesmo tempo. Quem apertar primeiro responde.
+            </p>
+            <button class="btn-main" id="btnIniciarDourada">Iniciar questão dourada</button>
+          </div>
+
+          <div class="controls center">
+            <button class="btn-main" id="btnJogarNovamente">Jogar novamente</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
